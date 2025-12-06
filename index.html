@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiveKit Voice Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>🎙️ LiveKit Voice Assistant</h1>
+                <p>Real-time AI Voice Communication Platform</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="dashboard">
+                <!-- Status Section -->
+                <section class="card status-card">
+                    <h2>Agent Status</h2>
+                    <div class="status-display">
+                        <div class="status-indicator" id="statusIndicator"></div>
+                        <span id="statusText">Checking...</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="checkStatus()">Refresh Status</button>
+                </section>
+
+                <!-- Token Generation Section -->
+                <section class="card token-card">
+                    <h2>Generate Token</h2>
+                    <div class="form-group">
+                        <label for="identity">User Identity:</label>
+                        <input 
+                            type="text" 
+                            id="identity" 
+                            placeholder="e.g., browser-user" 
+                            value="browser-user"
+                        >
+                    </div>
+                    <button class="btn btn-primary" onclick="generateToken()">Generate Token</button>
+                    
+                    <div id="tokenResult" class="token-result hidden">
+                        <h3>Connection Details</h3>
+                        <div class="token-info">
+                            <div class="token-field">
+                                <label>LiveKit URL:</label>
+                                <code id="tokenUrl"></code>
+                                <button class="copy-btn" onclick="copyToClipboard('tokenUrl')">Copy</button>
+                            </div>
+                            <div class="token-field">
+                                <label>Access Token:</label>
+                                <code id="tokenValue"></code>
+                                <button class="copy-btn" onclick="copyToClipboard('tokenValue')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Agent Control Section -->
+                <section class="card agent-card">
+                    <h2>Agent Control</h2>
+                    <p class="subtitle">Start the AI voice assistant to begin conversations</p>
+                    <button 
+                        class="btn btn-success" 
+                        id="startAgentBtn"
+                        onclick="startAgent()"
+                    >
+                        ▶️ Start Agent
+                    </button>
+                    <button 
+                        class="btn btn-danger hidden" 
+                        id="stopAgentBtn"
+                        onclick="stopAgent()"
+                    >
+                        ⏹️ Stop Agent
+                    </button>
+                    <div id="agentMessage" class="message hidden"></div>
+                </section>
+
+                <!-- Info Section -->
+                <section class="card info-card">
+                    <h2>How It Works</h2>
+                    <ol>
+                        <li><strong>Generate Token:</strong> Create an access token to connect to the LiveKit room</li>
+                        <li><strong>Start Agent:</strong> Launch the AI voice assistant</li>
+                        <li><strong>Connect:</strong> Join the "demo-room" with your token</li>
+                        <li><strong>Communicate:</strong> Talk to the AI voice assistant in real-time</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>LiveKit Voice Assistant • Powered by FastAPI & AI</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
