@@ -513,7 +513,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 For issues and questions:
 - **GitHub Issues** - [Create an issue](https://github.com/yourusername/LivekitVoiceAssistant/issues)
 - **LiveKit Community** - https://livekit.io/community
-- **Email** - your.email@example.com
+- **Email** - ahmedlaminouamadou@gmail.com
 
 ---
 
@@ -528,3 +528,4 @@ For issues and questions:
 **Happy coding! 🚀**
 
 Last Updated: December 6, 2025
+
